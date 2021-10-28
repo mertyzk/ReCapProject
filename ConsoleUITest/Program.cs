@@ -15,6 +15,8 @@ namespace ConsoleUITest
                 Console.WriteLine("CAR ID: "+ car.CarId + "\nAÇIKLAMA : "+ car.Description +"\nAraç Fiyatı: " + car.DailyPrice + "TL\n");
 
             }
+
+            // Proje yerine kütüphane olarak eklediğim için ConsoleUI adıyla tekrar ekleyemedim. Bu yüzden ConsoleUITest olarak yayınladım bu kısmı.
         }
     }
 }
