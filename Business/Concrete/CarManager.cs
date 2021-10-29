@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace Business.Concrete
 {
     public class CarManager : ICarService
@@ -18,6 +19,7 @@ namespace Business.Concrete
 
         public void Add(Car car)
         {
+
             if (car.Description.Length >= 2 && car.DailyPrice > 0)
             {
                 _carDal.Add(car);

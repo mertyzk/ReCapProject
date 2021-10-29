@@ -1,6 +1,7 @@
 ﻿using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using DataAccess.Concrete.InMemory;
+using Entity.Concrete;
 using System;
 
 namespace ConsoleUITest
@@ -27,6 +28,12 @@ namespace ConsoleUITest
             {
                 Console.Write(brand.BrandName);
             }
+
+            Car car1 = new Car();
+            car1.Description = "Deneme";
+            car1.ModelYear = 2015;
+
+            carManager.Add(car1);
         }
     }
 }
