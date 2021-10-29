@@ -1,4 +1,5 @@
 ﻿using Business.Concrete;
+using DataAccess.Concrete.EntityFramework;
 using DataAccess.Concrete.InMemory;
 using System;
 
@@ -8,15 +9,24 @@ namespace ConsoleUITest
     {
         static void Main(string[] args)
         {
-            CarManager carManager = new CarManager(new InMemoryCarDal());
+            CarManager carManager = new CarManager(new EfCarDal());
+            BrandManager brandManager = new BrandManager(new EfBrandDal());
+            ColorManager colorManager = new ColorManager(new EfColorDal());
 
             foreach (var car in carManager.GetAll())
             {
-                Console.WriteLine("CAR ID: "+ car.CarId + "\nAÇIKLAMA : "+ car.Description +"\nAraç Fiyatı: " + car.DailyPrice + "TL\n");
-
+                Console.Write(car.CarId);
             }
-
-            // Proje yerine kütüphane olarak eklediğim için ConsoleUI adıyla tekrar ekleyemedim. Bu yüzden ConsoleUITest olarak yayınladım bu kısmı.
+            Console.WriteLine("");
+            foreach (var color in colorManager.GetAll())
+            {
+                Console.Write(color.ColorName);
+            }
+            Console.WriteLine("");
+            foreach (var brand in brandManager.GetAll())
+            {
+                Console.Write(brand.BrandName);
+            }
         }
     }
 }
