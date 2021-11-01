@@ -51,6 +51,11 @@ namespace Business.Concrete
             return _carDal.GetAll(p => p.ColorId == colorId);
         }
 
+        public List<Car> GetCarsByDescription(string Description)
+        {
+            return _carDal.GetAll(p=>p.Description == Description);
+        }
+
         public void Update(Car car)
         {
             _carDal.Update(car);

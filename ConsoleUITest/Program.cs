@@ -14,6 +14,7 @@ namespace ConsoleUITest
             BrandManager brandManager = new BrandManager(new EfBrandDal());
             ColorManager colorManager = new ColorManager(new EfColorDal());
 
+            
             foreach (var car in carManager.GetAll())
             {
                 Console.Write(car.CarId);
@@ -29,11 +30,15 @@ namespace ConsoleUITest
                 Console.Write(brand.BrandName);
             }
 
-            Car car1 = new Car();
-            car1.Description = "Deneme";
-            car1.ModelYear = 2015;
+            foreach (var desc in carManager.GetAll())
+            {
+                Console.WriteLine(desc.Description);
+            }
 
-            carManager.Add(car1);
+            carManager.Add(new Car { ModelYear = 2001, DailyPrice = 254555, Description = "Yeni eklenen ürün", ColorId = 2, BrandId = 1 });
+
+
+
         }
     }
 }
