@@ -8,7 +8,7 @@ using System.Linq.Expressions;
 
 namespace DataAccess.Concrete.InMemory
 {
-    public class InMemoryCarDal : ICarDal
+    public class InMemoryCarDal //: ICarDal
     {
         List<Car> _cars;
 
@@ -66,5 +66,10 @@ namespace DataAccess.Concrete.InMemory
             carToUpdate.Description = car.Description;
             carToUpdate.ModelYear = car.ModelYear;
         }
+
+        //Car IEntityRepository<Car>.GetById(int id)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

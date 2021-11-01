@@ -47,6 +47,14 @@ namespace DataAccess.Concrete.EntityFramework
             }
         }
 
+        public Brand GetById(int id)
+        {
+            using (RecapProjectContext context = new RecapProjectContext())
+            {
+                return context.Brands.SingleOrDefault(b => b.BrandId == id);
+            }
+        }
+
         public void Update(Brand entity)
         {
             using (RecapProjectContext context = new RecapProjectContext())

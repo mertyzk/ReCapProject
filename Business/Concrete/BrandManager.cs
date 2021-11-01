@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using DataAccess.Concrete.EntityFramework;
 
 namespace Business.Concrete
 {
@@ -19,6 +20,8 @@ namespace Business.Concrete
 
         public void Add(Brand brand)
         {
+            // CRUD = Create = add , Read = GetAll,GetBy ID vs , Update / delete
+      
             if (brand.BrandName.Length > 2)
             {
                 _brandDal.Add(brand);
@@ -26,18 +29,20 @@ namespace Business.Concrete
         }
 
         public void Delete(Brand brand)
-        {
+        { 
+
             _brandDal.Delete(brand);
         }
 
-        public List<Brand> GetAll()
+        public List<Brand> GetAllBrands()
         {
             return _brandDal.GetAll();
         }
 
-        public List<Brand> GetById(int id)
+        public Brand GetById(int id)
         {
-            return _brandDal.GetAll(p => p.BrandId == id);
+            
+            return _brandDal.GetById(id);
         }
 
         public void Update(Brand brand)

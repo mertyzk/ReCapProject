@@ -47,6 +47,14 @@ namespace DataAccess.Concrete.EntityFramework
             }
         }
 
+        public Color GetById(int id)
+        {
+            using (RecapProjectContext context = new RecapProjectContext())
+            {
+                return context.Colors.SingleOrDefault(c => c.ColorId == id);
+            }
+        }
+
         public void Update(Color entity)
         {
             using (RecapProjectContext context = new RecapProjectContext())
