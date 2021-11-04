@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Business.Concrete
 {
+
     public class ColorManager : IColorService
     {
         IColorDal _colorDal;
@@ -33,9 +34,9 @@ namespace Business.Concrete
             return _colorDal.GetAll();
         }
 
-        public Color GetById(int id)
+        public Color GetById(int colorId)
         {
-            return _colorDal.GetById(id);
+            return _colorDal.Get(c => c.ColorId == colorId);
         }
 
         public void Update(Color color)
