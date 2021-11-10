@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Business.Constans
 {
-    public class Messages
+    public static class Messages
     {
         public static string AddedMsg = "Ekleme başarılı";
         public static string DeletedMsg = "Silme başarılı";
