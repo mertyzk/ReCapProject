@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using DataAccess.Concrete.EntityFramework;
+using Core.Utilities.Results;
+using Business.Constans;
 
 namespace Business.Concrete
 {
@@ -18,36 +20,40 @@ namespace Business.Concrete
             _brandDal = brandDal;
         }
 
-        public void Add(Brand brand)
+        public IResult Add(Brand brand)
         {
             // CRUD = Create = add , Read = GetAll,GetBy ID vs , Update / delete
       
             if (brand.BrandName.Length > 2)
             {
                 _brandDal.Add(brand);
+                return new SuccessResult(Messages.AddedMsg);
             }
+            return new ErrorResult(Messages.InvalidNameMsg);
         }
 
-        public void Delete(Brand brand)
+        public IResult Delete(Brand brand)
         { 
 
             _brandDal.Delete(brand);
+            return new SuccessResult(Messages.DeletedMsg);
         }
 
-        public List<Brand> GetAll()
+        public IDataResult<List<Brand>> GetAll()
         {
-            return _brandDal.GetAll();
+            return new SuccessDataResult<List<Brand>>(_brandDal.GetAll());
         }
 
-        public Brand GetById(int brandId)
+        public IDataResult<Brand> GetById(int brandId)
         {
-            
-            return _brandDal.Get(b=>b.BrandId==brandId);
+
+            return new SuccessDataResult<Brand>(_brandDal.Get(b => b.BrandId == brandId));
         }
 
-        public void Update(Brand brand)
+        public IResult Update(Brand brand)
         {
             _brandDal.Update(brand);
+            return new SuccessResult( Messages.UpdatedMsg);
         }
     }
 }
