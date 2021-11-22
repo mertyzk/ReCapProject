@@ -14,7 +14,7 @@ namespace ConsoleUITest
             BrandManager brandManager = new BrandManager(new EfBrandDal());
             ColorManager colorManager = new ColorManager(new EfColorDal());
 
-            var result= carManager.GetCarDetails();
+            var result = carManager.GetCarDetails();
             if (result.Success == true)
             {
                 foreach (var car in result.Data)
@@ -29,7 +29,8 @@ namespace ConsoleUITest
 
 
 
-            // DbSonucDondurme(brandManager, colorManager);
+
+            //DbSonucDondurme(brandManager, colorManager);
 
             // ForeachListeletme(carManager, brandManager, colorManager);
 
@@ -51,11 +52,11 @@ namespace ConsoleUITest
         //{
         //    Console.WriteLine("1 ile 12 arasında bir marka seçiniz");
         //    int selectBrand = Convert.ToInt32(Console.ReadLine());
-        //    Console.WriteLine(brandManager.GetById(selectBrand).BrandName);
+        //    Console.WriteLine(brandManager.GetById(selectBrand));
 
         //    Console.WriteLine("1 ile 7 arasında bir renk seçiniz");
         //    int selectColor = Convert.ToInt32(Console.ReadLine());
-        //    Console.WriteLine(colorManager.GetById(selectColor).ColorName);
+        //    Console.WriteLine(colorManager.GetById(selectColor));
         //}
         //#endregion
 
