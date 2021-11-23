@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Core.Utilities.Results;
 using Entity.Concrete;
 using Entity.DTOs;
 
@@ -7,15 +8,15 @@ namespace Business.Abstract
 {
     public interface IRentalService
     {
-        List<Rental> GetAll();
-        List<Rental> GetRentalsByCarId(int carId);
-        List<Rental> GetRentalsByCustomerId(int customerId);
-        Rental GetById(int rentId);
-        List<RentalDetailDto> GetRentalDetails();
+        IDataResult<List<Rental>> GetAll();
+        IDataResult<List<Rental>> GetRentalsByCarId(int carId);
+        IDataResult<List<Rental>> GetRentalsByCustomerId(int customerId);
+        IDataResult<Rental> GetById(int rentId);
+        IDataResult<List<RentalDetailDto>> GetRentalDetails();
 
-        public void Add();
-        public void Update();
-        public void Delete();
+        IResult Add(Rental rental);
+        IResult Update(Rental rental);
+        IResult Delete(Rental rental);
 
     }
 }

@@ -1,4 +1,6 @@
 ﻿using Business.Abstract;
+using Business.Constans;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entity.Concrete;
 using System;
@@ -15,29 +17,32 @@ namespace Business.Concrete
             _userDal = userDal;
         }
 
-        public void Add(User user)
+        public IResult Add(User user)
         {
             _userDal.Add(user);
+            return new SuccessResult(Messages.AddedMsg);
         }
 
-        public void Delete(User user)
+        public IResult Delete(User user)
         {
             _userDal.Delete(user);
+            return new SuccessResult(Messages.DeletedMsg);
         }
 
-        public List<User> GetAll()
+        public IDataResult<List<User>> GetAll()
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<User>>(_userDal.GetAll(), Messages.ListedMsg);
         }
 
-        public User GetByUserId(int userId)
+        public IDataResult<User> GetByUserId(int userId)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<User>(_userDal.Get(u => u.UserId == userId));
         }
 
-        public void Update(User user)
+        public IResult Update(User user)
         {
             _userDal.Update(user);
+            return new SuccessResult(Messages.UpdatedMsg);
         }
     }
 }
