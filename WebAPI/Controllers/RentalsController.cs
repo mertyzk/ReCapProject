@@ -10,16 +10,13 @@ using Microsoft.AspNetCore.Mvc;
 namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
-    public class BrandsController : ControllerBase
+    public class RentalsController : ControllerBase
     {
+        IRentalService _rentalService;
 
-        IBrandService _brandService;
-
-        public BrandsController(IBrandService brandService)
+        public RentalsController(IRentalService rentalService)
         {
-            _brandService = brandService;
+            _rentalService = rentalService;
         }
-
     }
 }
