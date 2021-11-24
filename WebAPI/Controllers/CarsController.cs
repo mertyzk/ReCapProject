@@ -21,8 +21,7 @@ namespace WebAPI.Controllers
             _carService = carService;
         }
 
-        [HttpGet("getall")]
-
+        [HttpGet("GetAll")]
         public IActionResult GetAll()
         {
             var result = _carService.GetAll();
@@ -34,7 +33,6 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet("GetById")]
-
         public IActionResult GetById(int carId)
         {
             var result = _carService.GetById(carId);
@@ -46,7 +44,6 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet("GetCarsByBrandId")]
-
         public IActionResult GetCarsByBrandId(int brandId)
         {
             var result = _carService.GetById(brandId);
@@ -58,7 +55,6 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet("GetCarsByColorId")]
-
         public IActionResult GetCarsByColorId(int colorId)
         {
             var result = _carService.GetById(colorId);
@@ -71,7 +67,6 @@ namespace WebAPI.Controllers
 
 
         [HttpPost("Add")]
-
         public IActionResult Add(Car car)
         {
             var result = _carService.Add(car);
@@ -84,7 +79,6 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("Delete")]
-
         public IActionResult Delete(Car car)
         {
             var result = _carService.Delete(car);
@@ -97,7 +91,6 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("Update")]
-
         public IActionResult Update(Car car)
         {
             var result = _carService.Update(car);
