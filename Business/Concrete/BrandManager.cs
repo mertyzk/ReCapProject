@@ -8,6 +8,9 @@ using System.Linq;
 using DataAccess.Concrete.EntityFramework;
 using Core.Utilities.Results;
 using Business.Constans;
+using Core.CrossCuttingConcers.Validation.FluentValidation;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspect.Autofac.Validation;
 
 namespace Business.Concrete
 {
@@ -20,16 +23,12 @@ namespace Business.Concrete
             _brandDal = brandDal;
         }
 
+        [ValidationAspect(typeof(BrandValidator))]
         public IResult Add(Brand brand)
         {
-            // CRUD = Create = add , Read = GetAll,GetBy ID vs , Update / delete
-      
-            if (brand.BrandName.Length > 2)
-            {
-                _brandDal.Add(brand);
-                return new SuccessResult(Messages.AddedMsg);
-            }
-            return new ErrorResult(Messages.InvalidNameMsg);
+            _brandDal.Add(brand);
+            return new SuccessResult(Messages.AddedMsg);
+        
         }
 
         public IResult Delete(Brand brand)

@@ -7,8 +7,32 @@
   <ItemGroup>
     <None Remove="Npgsql" />
     <None Remove="Npgsql.EntityFrameworkCore.PostgreSQL" />
+    <None Remove="CrossCuttingConcers\" />
+    <None Remove="CrossCuttingConcers\Validation\" />
+    <None Remove="CrossCuttingConcers\Validation\FluentValidation\" />
+    <None Remove="FluentValidation" />
+    <None Remove="Utilities\Interceptors\" />
+    <None Remove="Autofac.Extras.DynamicProxy" />
+    <None Remove="Autofac" />
+    <None Remove="Autofac.Extensions.DependencyInjection" />
+    <None Remove="Aspect\" />
+    <None Remove="Aspect\Autofac\" />
+    <None Remove="Aspect\Autofac\Validation\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.11" />
+    <PackageReference Include="FluentValidation" Version="10.3.4" />
+    <PackageReference Include="Autofac.Extras.DynamicProxy" Version="6.0.0" />
+    <PackageReference Include="Autofac" Version="6.3.0" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CrossCuttingConcers\" />
+    <Folder Include="CrossCuttingConcers\Validation\" />
+    <Folder Include="CrossCuttingConcers\Validation\FluentValidation\" />
+    <Folder Include="Utilities\Interceptors\" />
+    <Folder Include="Aspect\" />
+    <Folder Include="Aspect\Autofac\" />
+    <Folder Include="Aspect\Autofac\Validation\" />
   </ItemGroup>
 </Project>
