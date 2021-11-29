@@ -16,5 +16,8 @@ namespace Business.Constans
         public static string MaintenanceTime = "Sistem bakım çalışması...";
         public static string ListedMsg = "Listeleme başarılı";
         public static string InvalidListMsg = "Listeleme işlemi başarısız!";
+        public static string CarCountOfBrandError = "Bu markaya eklenebilecek araç sayısı aşıldı";
+        public static string CarDescriptionAlreadyExists = "Bu açıklamayla daha önce ekleme yapılmış";
+        public static string BrandLimitExceded = "Daha fazla marka ekleyemezsiniz";
     }
 }

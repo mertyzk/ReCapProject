@@ -18,6 +18,7 @@
     <None Remove="Aspect\" />
     <None Remove="Aspect\Autofac\" />
     <None Remove="Aspect\Autofac\Validation\" />
+    <None Remove="Utilities\Business\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.11" />
@@ -34,5 +35,6 @@
     <Folder Include="Aspect\" />
     <Folder Include="Aspect\Autofac\" />
     <Folder Include="Aspect\Autofac\Validation\" />
+    <Folder Include="Utilities\Business\" />
   </ItemGroup>
 </Project>
