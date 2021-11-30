@@ -104,7 +104,7 @@ namespace Business.Concrete
             return new SuccessResult();
         }
 
-        private IResult CheckIfBrandLimitExceded() // Kategori sayısı 33'ten fazlaysa, yen, ürün ekleme. Uydurma kural.
+        private IResult CheckIfBrandLimitExceded() // Kategori sayısı 33'ten fazlaysa, yeni ürün ekleme. Uydurma kural.
         {
             var result = _brandService.GetAll(); // Buradaki amaç farklı bir servise ulaşmanın yöntemini öğrenmek. Brand'ta yapılacak işlemi, Car'da çalıştırmak.
             if (result.Data.Count>33) // BURADA BİR INJECTION İŞLEMİ MEVCUT.

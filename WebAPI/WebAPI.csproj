@@ -21,8 +21,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Autofac.Extensions.DependencyInjection" />
+    <None Remove="www\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+    <Folder Include="wwwroot\Uploads\" />
+    <Folder Include="wwwroot\Uploads\Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\Uploads\" />
+    <Content Remove="wwwroot\Uploads\Images\" />
   </ItemGroup>
 </Project>

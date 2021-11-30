@@ -18,11 +18,13 @@
     <None Remove="ValidationRules\" />
     <None Remove="ValidationRules\FluentValidation\" />
     <None Remove="FluentValidation" />
+    <None Remove="Microsoft.AspNetCore.Http" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Autofac" Version="6.3.0" />
     <PackageReference Include="Autofac.Extras.DynamicProxy" Version="6.0.0" />
     <PackageReference Include="FluentValidation" Version="10.3.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DependencyResolvers\" />

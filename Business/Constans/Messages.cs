@@ -19,5 +19,8 @@ namespace Business.Constans
         public static string CarCountOfBrandError = "Bu markaya eklenebilecek araç sayısı aşıldı";
         public static string CarDescriptionAlreadyExists = "Bu açıklamayla daha önce ekleme yapılmış";
         public static string BrandLimitExceded = "Daha fazla marka ekleyemezsiniz";
+        public static string CarImageLimitExceded = "Bir aracın en fazla 5 resmi olabilir";
+        public static string ImageAddedMsg= "Resim başarıyla yüklendi";
+
     }
 }
