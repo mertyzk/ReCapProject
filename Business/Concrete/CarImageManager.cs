@@ -10,6 +10,7 @@ using DataAccess.Abstract;
 using Entity.Concrete;
 using Microsoft.AspNetCore.Http;
 using System.IO;
+using System.Linq;
 
 namespace Business.Concrete
 {
@@ -68,7 +69,7 @@ namespace Business.Concrete
 
         private IResult CheckIfCarImageCount(int carId)
         {
-            var result = _carImageDal.GetAll(c => c.CarId == carId).Count;
+            var result = _carImageDal.GetAll(c => c.CarId == carId).Count();
             if (result>5)
             {
                 return new ErrorResult(Messages.CarImageLimitExceded);
@@ -78,7 +79,7 @@ namespace Business.Concrete
 
         private IResult CheckCarImage(int carId)
         {
-            var result = _carImageDal.GetAll(c => c.CarId == carId).Count;
+            var result = _carImageDal.GetAll(c => c.CarId == carId).Count();
             if (result == 0)
             {
                 return new SuccessResult();
