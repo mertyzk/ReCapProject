@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using Npgsql;
 using Microsoft.EntityFrameworkCore;
+using Core.Entities.Concrete;
 
 namespace DataAccess.Concrete.EntityFramework
 {
@@ -21,5 +22,7 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<User> Users { get; set; }
         public DbSet<Rental> Rentals { get; set; }
         public DbSet<CarImage> CarImages { get; set; }
+        public DbSet<OperationClaim> OperationClaims { get; set; }
+        public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
     }
 }

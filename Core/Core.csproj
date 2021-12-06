@@ -23,6 +23,11 @@
     <None Remove="Utilities\Helpers\FileHelper\" />
     <None Remove="Microsoft.AspNetCore.Http" />
     <None Remove="Utilities\Helpers\GuidHelper\" />
+    <None Remove="Entities\Concrete\" />
+    <None Remove="Utilities\Security\" />
+    <None Remove="Utilities\Security\Encryption\" />
+    <None Remove="Utilities\Security\Hashing\" />
+    <None Remove="Utilities\Security\JWT\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.11" />
@@ -44,5 +49,10 @@
     <Folder Include="Utilities\Helpers\" />
     <Folder Include="Utilities\Helpers\FileHelper\" />
     <Folder Include="Utilities\Helpers\GuidHelperr\" />
+    <Folder Include="Entities\Concrete\" />
+    <Folder Include="Utilities\Security\" />
+    <Folder Include="Utilities\Security\Encryption\" />
+    <Folder Include="Utilities\Security\Hashing\" />
+    <Folder Include="Utilities\Security\JWT\" />
   </ItemGroup>
 </Project>
