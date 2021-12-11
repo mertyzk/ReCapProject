@@ -28,6 +28,9 @@
     <None Remove="Utilities\Security\Encryption\" />
     <None Remove="Utilities\Security\Hashing\" />
     <None Remove="Utilities\Security\JWT\" />
+    <None Remove="Microsoft.IdentityModel.Tokens" />
+    <None Remove="System.IdentityModel.Tokens.Jwt" />
+    <None Remove="Extensions\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.11" />
@@ -36,6 +39,8 @@
     <PackageReference Include="Autofac" Version="6.3.0" />
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.15.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.15.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CrossCuttingConcers\" />
@@ -54,5 +59,6 @@
     <Folder Include="Utilities\Security\Encryption\" />
     <Folder Include="Utilities\Security\Hashing\" />
     <Folder Include="Utilities\Security\JWT\" />
+    <Folder Include="Extensions\" />
   </ItemGroup>
 </Project>

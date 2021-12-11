@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Core.Entities.Concrete;
 
 namespace Business.Constans
 {
@@ -21,6 +22,12 @@ namespace Business.Constans
         public static string BrandLimitExceded = "Daha fazla marka ekleyemezsiniz";
         public static string CarImageLimitExceded = "Bir aracın en fazla 5 resmi olabilir";
         public static string ImageAddedMsg= "Resim başarıyla yüklendi";
-
+        public static string UserNotFound = "Kullanıcı bulunamadı!";
+        public static string PasswordError = "Hatalı şifre girdiniz!";
+        public static string SuccessfulLogin = "Giriş başarılı";
+        public static string UserAlreadyExists = "Bu kullanıcı zaten mevcut";
+        public static string UserRegistered = "Kayıt başarılı!";
+        public static string AccessTokenCreated = "Access Token başarıyla oluşturuldu";
+        public static string AccessTokenCreatingError = "Access Token oluşturulamadı!";
     }
 }
