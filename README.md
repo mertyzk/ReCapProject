@@ -1,5 +1,5 @@
 <h2>Rent a Car Project</h2>
-<p><b><font color="blue">Language:</font></b> C#</p>
+<p><b><i>Language:</i></b> C#</p>
 <p><b>Backend:</b> Asp.NET Core</p>
 <p><b>Database:</b> PostgreSQL</p>
 <p><b>Architecture:</b> N-Tier Arc.</p>
