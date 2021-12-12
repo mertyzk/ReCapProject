@@ -1,4 +1,4 @@
-<h3>Rent a Car Project</h3>
+<h2>Rent a Car Project</h2>
 <p>Language: C#</p>
 <p>Backend: Asp.NET Core</p>
 <p>ORM: Entity Framework</p>
