@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Business.Abstract;
 using Entity.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -21,7 +22,7 @@ namespace WebAPI.Controllers
             _brandService = brandService;
         }
 
-
+        [Authorize(Roles = "Brands.List")]
         [HttpGet("getall")]
         public IActionResult GetAll()
         {

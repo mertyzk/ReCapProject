@@ -11,6 +11,7 @@ using Business.Constans;
 using Core.CrossCuttingConcers.Validation.FluentValidation;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspect.Autofac.Validation;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Business.Concrete
 {
@@ -38,6 +39,7 @@ namespace Business.Concrete
             return new SuccessResult(Messages.DeletedMsg);
         }
 
+    
         public IDataResult<List<Brand>> GetAll()
         {
             if (DateTime.Now.Hour==22)
