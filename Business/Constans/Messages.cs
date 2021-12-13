@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text;
 using Core.Entities.Concrete;
 
@@ -29,5 +30,6 @@ namespace Business.Constans
         public static string UserRegistered = "Kayıt başarılı!";
         public static string AccessTokenCreated = "Access Token başarıyla oluşturuldu";
         public static string AccessTokenCreatingError = "Access Token oluşturulamadı!";
+        public static string AuthorizationDenied = "Yetkilendirme reddedildi";
     }
 }

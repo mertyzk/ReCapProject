@@ -22,7 +22,7 @@ namespace WebAPI.Controllers
             _brandService = brandService;
         }
 
-        [Authorize(Roles = "Brands.List")]
+        //[Authorize(Roles = "Brands.List")] API tarafında güvenlik kontrolü
         [HttpGet("getall")]
         public IActionResult GetAll()
         {

@@ -12,6 +12,7 @@ using Core.CrossCuttingConcers.Validation.FluentValidation;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspect.Autofac.Validation;
 using Microsoft.AspNetCore.Authorization;
+using Business.BusinessAspects.Autofac;
 
 namespace Business.Concrete
 {
@@ -24,6 +25,7 @@ namespace Business.Concrete
             _brandDal = brandDal;
         }
 
+        [SecuredOperation("moderator")]
         [ValidationAspect(typeof(BrandValidator))]
         public IResult Add(Brand brand)
         {
@@ -39,13 +41,9 @@ namespace Business.Concrete
             return new SuccessResult(Messages.DeletedMsg);
         }
 
-    
+        [SecuredOperation("moderator")]
         public IDataResult<List<Brand>> GetAll()
         {
-            if (DateTime.Now.Hour==22)
-            {
-                return new ErrorDataResult<List<Brand>>(_brandDal.GetAll(),Messages.MaintenanceTime);
-            }
             return new SuccessDataResult<List<Brand>>(_brandDal.GetAll());
         }
 
