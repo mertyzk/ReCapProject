@@ -34,6 +34,9 @@
     <None Remove="Microsoft.AspNetCore.Authentication.JwtBearer" />
     <None Remove="Utilities\IoC\" />
     <None Remove="DependencyResolvers\" />
+    <None Remove="CrossCuttingConcers\Caching\" />
+    <None Remove="CrossCuttingConcers\Caching\Microsoft\" />
+    <None Remove="Aspect\Autofac\Caching\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.11" />
@@ -66,5 +69,8 @@
     <Folder Include="Extensions\" />
     <Folder Include="Utilities\IoC\" />
     <Folder Include="DependencyResolvers\" />
+    <Folder Include="CrossCuttingConcers\Caching\" />
+    <Folder Include="CrossCuttingConcers\Caching\Microsoft\" />
+    <Folder Include="Aspect\Autofac\Caching\" />
   </ItemGroup>
 </Project>
