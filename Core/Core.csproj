@@ -37,6 +37,8 @@
     <None Remove="CrossCuttingConcers\Caching\" />
     <None Remove="CrossCuttingConcers\Caching\Microsoft\" />
     <None Remove="Aspect\Autofac\Caching\" />
+    <None Remove="Aspect\Autofac\Transaction\" />
+    <None Remove="Aspect\Autofac\Performance\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.11" />
@@ -72,5 +74,7 @@
     <Folder Include="CrossCuttingConcers\Caching\" />
     <Folder Include="CrossCuttingConcers\Caching\Microsoft\" />
     <Folder Include="Aspect\Autofac\Caching\" />
+    <Folder Include="Aspect\Autofac\Transaction\" />
+    <Folder Include="Aspect\Autofac\Performance\" />
   </ItemGroup>
 </Project>

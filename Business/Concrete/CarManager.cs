@@ -1,7 +1,10 @@
 ﻿using Business.Abstract;
+using Business.BusinessAspects.Autofac;
 using Business.Constans;
 using Business.ValidationRules.FluentValidation;
+using Core.Aspect.Autofac;
 using Core.Aspect.Autofac.Caching;
+using Core.Aspect.Autofac.Performance;
 using Core.Aspect.Autofac.Validation;
 using Core.Utilities.Business;
 using Core.Utilities.Results;
@@ -12,7 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using System.Transactions;
 
 namespace Business.Concrete
 {
@@ -27,6 +30,7 @@ namespace Business.Concrete
             _brandService = brandService;
         }
 
+        [SecuredOperation("moderator")]
         [ValidationAspect(typeof(CarValidator))]
         [CacheRemoveAspect("ICarService.Get")]
         public IResult Add(Car car)
@@ -54,6 +58,7 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(), Messages.ListedMsg);
         }
         [CacheAspect]
+        [PerformanceAspect(15)]
         public IDataResult<Car> GetById(int carId)
         {
             return new SuccessDataResult<Car>(_carDal.Get(c => c.CarId == carId));
@@ -118,6 +123,18 @@ namespace Business.Concrete
             return new SuccessResult();
         }
 
+        [TransactionScopeAspect]
+        public IResult AddTransactionalTest(Car car)
+        {     
+            Add(car);
+            if (car.DailyPrice < 100)
+            {
+                throw new Exception("Günlük kiralama ücretini kontrol ediniz.");
+            }
+            Add(car);
+
+            return null;
+        }
     }
 
 }
