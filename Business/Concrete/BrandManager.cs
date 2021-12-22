@@ -41,7 +41,7 @@ namespace Business.Concrete
             return new SuccessResult(Messages.DeletedMsg);
         }
 
-        [SecuredOperation("moderator")]
+        //[SecuredOperation("moderator")]
         public IDataResult<List<Brand>> GetAll()
         {
             return new SuccessDataResult<List<Brand>>(_brandDal.GetAll());
