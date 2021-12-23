@@ -7,4 +7,4 @@
 <p><b><i>IoC:</i></b> Autofac</p>
 <p><b><i>Validation:</i></b> FluentValidation</p>
 <p><b><i>Authentication/Authorization:</i></b> JWT</p>
-<p><b><i>UI:</i></b> Angular</p>
+<p><b><i>UI:</i></b> WEB API</p>
