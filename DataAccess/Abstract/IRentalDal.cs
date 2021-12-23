@@ -6,8 +6,8 @@ using Entity.DTOs;
 
 namespace DataAccess.Abstract
 {
-    public interface IRentalDal:IEntityRepository<Rental>
+    public interface IRentalDal : IEntityRepository<Rental>
     {
-        
+        List<RentalDetailDto> GetRentalDetails();
     }
 }

@@ -25,7 +25,7 @@ namespace WebAPI.Controllers
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
-            Thread.Sleep(2000);
+            Thread.Sleep(1000);
             var result = _carService.GetAll();
             if (result.Success)
             {
@@ -60,6 +60,18 @@ namespace WebAPI.Controllers
         public IActionResult GetCarsByColorId(int colorId)
         {
             var result = _carService.GetById(colorId);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpGet("getcardetails")]
+        public IActionResult GetCarDetails()
+        {
+            Thread.Sleep(1000);
+            var result = _carService.GetCarDetails();
             if (result.Success)
             {
                 return Ok(result);
@@ -103,5 +115,7 @@ namespace WebAPI.Controllers
             return BadRequest(result);
 
         }
+
+
     }
 }
