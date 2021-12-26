@@ -90,6 +90,8 @@ namespace WebAPI
                 endpoints.MapControllers();
             });
 
+            app.UseStaticFiles();
+
             //Middleware : yaşam döngüsünde hangi yapıların sırasıyla devreye gireceğini söylüyoruz.
         }
     }
