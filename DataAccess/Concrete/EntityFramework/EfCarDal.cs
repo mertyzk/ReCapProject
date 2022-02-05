@@ -15,7 +15,7 @@ namespace DataAccess.Concrete.EntityFramework
     {
 
         // buraya ürüne ait özel operasyonlar. örneğin join atmak.
-        public List<CarDetailDto> GetCarDetails()
+        public List<CarDetailDto> GetCarDetails(Expression<Func<CarDetailDto, bool>> filter = null)
         {
             using (RecapProjectContext context = new RecapProjectContext())
             {
@@ -25,7 +25,7 @@ namespace DataAccess.Concrete.EntityFramework
                              join cl in context.Colors 
                              on c.ColorId equals cl.ColorId
                              select new CarDetailDto {CarId=c.CarId,BrandName=b.BrandName,ColorName=cl.ColorName,DailyPrice=c.DailyPrice, BrandId=b.BrandId, ColorId=c.ColorId, ModelYear=c.ModelYear,Description=c.Description};
-                return result.ToList();
+               return filter == null ? result.ToList() : result.Where(filter).ToList();
             }
         }
     }
